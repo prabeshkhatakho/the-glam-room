@@ -1,0 +1,278 @@
+/* =========================
+   GLOBAL / PAGE
+========================= */
+
+.home-page {
+    padding-top: 60px;
+}
+
+/* =========================
+   OFFER BAR
+========================= */
+
+.offer-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 12px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.offer-link {
+    color: #ffd700;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.offer-close {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img {
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+}
+
+.hero-logo {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 400px;
+    z-index: 2;
+}
+
+.hero-text {
+    position: absolute;
+    top: 380px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-family: 'Abril Fatface', serif;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero-text h3 {
+    font-family: 'Abril Fatface', serif;
+}
+
+.text-block {
+    max-width: 800px;
+    margin: auto;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Hero Button */
+.hero-section .btn-primary {
+    background: #ff69b4;
+    border: none;
+}
+
+.hero-section .btn-primary:hover {
+    background: #ff85c1;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.d-flex {
+    gap: 40px;
+}
+
+.custom-left-img {
+    width: 450px;
+    height: 700px;
+    object-fit: cover;
+}
+
+.custom-right-img {
+    width: 700px;
+    height: 700px;
+    object-fit: cover;
+}
+
+.center-text {
+    flex: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.center-text h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.service-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    
+}
+
+.center-text .btn-outline-primary {
+    display: block;
+    width: 150px;
+    margin: 30px auto 0;
+}
+
+/* =========================
+   ARTIST SECTION
+========================= */
+
+.artist-sections {
+    margin-top: 80px;
+}
+
+.artist-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    gap: 80px;
+}
+
+.artist-block:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Artist Images */
+.artist-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.artist-image img {
+    max-width: 520px;
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.artist-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Artist Content */
+.artist-content {
+    flex: 1;
+    max-width: 650px;
+    padding: 0 20px;
+}
+
+.artist-name {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.artist-role {
+    color: #ff69b4;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.artist-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 700px;
+    margin: 20px auto;
+    padding-left: 20px;
+    border-left: 3px solid #ff69b4;
+    
+}
+
+
+.artist-btn {
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #ff69b4;
+    border: none;
+    border-radius: 10px;
+}
+
+.artist-btn:hover {
+    background: #ff85c1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+    .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .custom-left-img,
+    .custom-right-img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero-logo {
+        height: 120px;
+        top: 80px;
+    }
+
+    .hero-text {
+        top: 180px;
+        width: 90%;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .artist-block,
+    .artist-block:nth-child(even) {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .artist-image img {
+        height: 420px;
+    }
+
+    .artist-content {
+        max-width: 100%;
+    }
+}

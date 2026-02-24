@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages/about.css' %}">
+{% endblock %}
+
+{% block title %}About Us | The Glam Room{% endblock %}
+
+{% block content %}
+
+<section class="dark-services">
+
+    <!-- Hero Image -->
+    <div class="category-image">
+        <img src="{% static 'img/brush.jpeg' %}" alt="Hero Image" class="img-fluid w-100">
+    </div>
+
+    <div class="container">
+
+        <!-- Display messages -->
+        {% if messages %}
+        <div class="mb-4 mt-4">
+            {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <h2 class="text-center mb-5 mt-5">Welcome to The Glam Room</h2>
+
+        <!-- Categories in 3 columns, left-aligned -->
+        <div class="row row-gap-4">
+            {% for category in categories %}
+            <div class="col-md-4 mb-3 text-start">
+                <h4 class="text-uppercase mb-2">
+                    <a href="{% url 'AboutUsCategory_detail' category.id %}" class="AboutUsCategory-link">
+                        {{ category.name }}
+                    </a>
+                </h4>
+            </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+{% endblock %}

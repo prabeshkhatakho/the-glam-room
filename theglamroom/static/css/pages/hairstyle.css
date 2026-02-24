@@ -1,0 +1,181 @@
+body {
+    background-color: #f2f2f2;
+}
+
+/* ----------------- Hero Section ----------------- */
+.hero-container {
+    position: relative;
+    width: 100%;
+    background: #000;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    font-family: 'Abril Fatface', serif;
+    z-index: 1;
+}
+
+.hero-overlay h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+/* Dark semi-transparent overlay behind text */
+.hero-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: -1;
+}
+
+/* ----------------- Special Hair Banner ----------------- */
+.special-hair-banner {
+    background-color: #f2f2f2;       /* light gray background */
+    padding: 25px 0;                 /* vertical spacing */
+    text-align: center;
+}
+
+.special-hair-banner h2 {
+    font-size: 2.5rem;               /* big but not too large */
+    font-weight: 700;                /* bold */
+    margin: 0;                        /* remove default margin */
+    font-family: 'Abril Fatface', serif;
+                       /* branding color */
+}
+
+
+
+/* ----------------- Hair Card Section ----------------- */
+.hair-rect-card {
+    height: 720px;       /* keep tall rectangle */
+    max-width: 450px;    /* increase width */
+    width: 100%;         /* let it fill column flex */
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Center card inside Bootstrap column */
+.col.d-flex.justify-content-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* Image wrapper */
+.hair-img-wrapper {
+    width: 90%;              /* make wrapper slightly smaller than card width */
+    padding-top: 90%;        /* creates a perfect square using aspect ratio trick */
+    margin: 15px auto 0;     /* center horizontally with top margin */
+    position: relative;       /* required for absolutely positioned img */
+    overflow: hidden;
+    border-radius: 10px;     /* optional: rounded corners */
+    background-color: #f8f8f8; /* optional light background */
+}
+
+/* Image inside square wrapper */
+.hair-img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* fills the square without stretching */
+}
+
+/* Card content */
+.hair-card-content {
+    height: 35%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hair-card-content h5 {
+    padding-bottom: 7px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    font-size: 2rem;
+    color: #555;
+    display: inline-block; /* underline matches text width */
+    border-bottom: 1px solid #555;
+    text-align: left;
+}
+
+.hair-card-content p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Book Now Button */
+.book-btn {
+    padding: 8px 20px;
+    background: #ff69b4;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.book-btn:hover {
+    background: #222;
+    transform: translateY(-2px);
+}
+
+/* Hover effect on card */
+.hair-rect-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+/* ----------------- Responsive Adjustments ----------------- */
+@media (max-width: 992px) {
+    .hair-rect-card {
+        max-width: 320px;
+    }
+    .hair-card-content h5 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-overlay h1 {
+        font-size: 3rem;
+    }
+    .hair-rect-card {
+        max-width: 100%; /* fill smaller screens */
+        height: auto;
+    }
+    .hair-card-content h5 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-overlay h1 {
+        font-size: 2.5rem;
+    }
+    .special-hair-banner h2 {
+        font-size: 2rem;
+    }
+}

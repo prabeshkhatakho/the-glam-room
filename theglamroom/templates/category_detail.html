@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ category.name }} | The Glam Room{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">{{ category.name }}</h2>
+    {% if category.description %}
+    <p>{{ category.description }}</p>
+    {% endif %}
+
+    <!-- Example: show services in this category -->
+    {% if category.services.all %}
+    <div class="row">
+        {% for service in category.services.all %}
+        <div class="col-md-4 mb-3">
+            <h5>{{ service.name }}</h5>
+            <p>{{ service.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

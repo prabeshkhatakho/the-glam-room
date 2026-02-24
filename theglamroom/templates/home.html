@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages/home.css' %}">
+{% endblock %}
+
+{% block title %}Home - The Glam Room{% endblock %}
+{% block body_class %}home-page{% endblock %}
+
+
+
+{% block content %}
+
+
+
+<!-- Hero Section -->
+<div class="hero-section position-relative text-center">
+
+  <!-- Hero Image -->
+  <img src="{% static 'img/carousel4.jpg' %}" class="img-fluid hero-img" alt="Hero Image">
+
+  <!-- Logo overlay -->
+  <img src="{% static 'img/logo1.png' %}" class="hero-logo" alt="Logo">
+
+  <!-- Text overlay -->
+  <div class="hero-text">
+    <h1>Welcome to The Glam Room</h1>
+    <h3>Look stunning, feel confident</h3>
+
+    <!-- Paragraph block over image -->
+    <div class="hero-paragraph text-block mt-2">
+      <p>
+        Welcome to The Glam Room, the ultimate destination for luxury hair, beauty, and skincare in NYC. We offer
+        innovative treatments designed to enhance your appearance and bring out your natural beauty, all with a
+        personalized, tailored approach.
+      </p>
+      <p>
+        At The Glam Room, our expert team provides top-tier hair styling, makeup, nail, and skincare services in a
+        relaxing and private environment. Book a consultation today and experience our elevated approach to beauty and
+        self-care.
+      </p>
+    </div>
+
+    <a href="#services" class="btn btn-primary mt-3">Book Now</a>
+  </div>
+
+</div>
+
+
+<div class="d-flex align-items-center justify-content-between">
+  <img src="{% static 'img/tyalor3.jpg' %}" class="img-fluid custom-left-img" alt="Left Image">
+
+  <div class="center-text">
+    <h2>ABOUT THE GLAM ROOM</h2>
+    <p class="service-text">
+      Le Parlour was created with the exclusive experience in mind. In a boutique setting, with our highly personalized
+      and individually tailored treatment plans,
+      we create an atmosphere of serenity, comfort, privacy and professionalism. Our unique approach will leave you
+      feeling relaxed, rejuvenated and restored.
+       Our focus is on providing the best service and experience. Laser treatments continue to be an innovative
+      solution in the beauty industry.
+      They offer effective, pain-free treatments for your self-care. Let us change your perspective on self-care. Our
+      senior esthetician has over 18 years
+      of experience catering to patient needs and exceeding their expectations. Reveal a new layer of beauty here at Le
+      Parlour today.
+    </p>
+    <a href="#services" class="btn btn-outline-primary mt-4">Read more</a>
+  </div>
+
+  <img src="{% static 'img/rihana.jpg' %}" class="img-fluid custom-right-img" alt="Right Image">
+
+</div>
+
+<div class="artist-sections mt-4">
+
+{% for artist in artists %}
+<div class="artist-block">
+
+  <div class="artist-image">
+    <img src="{{ artist.image.url }}" class="img-fluid" alt="{{ artist.name }}">
+  </div>
+
+  <div class="artist-content">
+    <h2 class="artist-name">{{ artist.name }}</h2>
+    <h5 class="artist-role">{{ artist.role }}</h5>
+
+    <p class="artist-description">
+      {{ artist.bio }}
+    </p>
+
+    <a href="{% url 'contact_artist' artist.id %}" 
+       class="btn btn-primary artist-btn">
+       Talk to Artist
+    </a>
+
+  </div>
+
+</div>
+{% endfor %}
+
+</div>
+
+
+
+{% endblock %}

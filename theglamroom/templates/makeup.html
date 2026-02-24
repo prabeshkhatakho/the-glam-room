@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages/hairstyle.css' %}">
+{% endblock %}
+
+{% block main_class %}hair-style{% endblock %}
+
+{% block content %}
+
+<!-- Hero Image with Overlay -->
+<div class="hero-container">
+    <img src="{% static 'img/hairstylebanner1.jpg' %}" class="img-fluid hero-img" alt="Hero Image">
+    <div class="hero-overlay">
+        <h1>Hair Styling Services</h1>
+    </div>
+</div>
+
+<!-- Glam Room Special Hair Text -->
+<div class="special-hair-banner text-center mt-4">
+    <h2>The Glam Room Special Maekup</h2>
+</div>
+
+<div class="container my-5">
+    <!-- Example: Card grid for hairstyles -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-4">
+        {% for makeup in makeups %}
+        <div class="col d-flex justify-content-center">
+            <div class="hair-rect-card">
+                <div class="hair-img-wrapper">
+                    <img src="{{ makeup.image.url }}" alt="{{ makeup.title }}">
+                </div>
+
+                <div class="hair-card-content text-center">
+                    <h5>{{ makeup.title }}</h5>
+                    <p>{{ makeup.description }}</p>
+
+                    <a href="{% url 'book_appointment' %}" class="btn book-btn">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

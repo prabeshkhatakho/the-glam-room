@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages/contact.css' %}">
+{% endblock %}
+
+{% block title %} Contact Us {% endblock title %}
+{% block main_class %}contact-page{% endblock %}
+
+{% block content %}
+
+<!-- Hero Image with Overlay -->
+<div class="hero-container container-fluid p-0">
+    <img src="{% static 'img/contact-us4.jpg' %}" class="img-fluid hero-img" alt="Hero Image">
+
+    <div class="hero-overlay">
+        <h1>Contact Us</h1>
+        <p>We’d love to hear from you</p>
+    </div>
+</div>
+
+
+<div class="map-section mt-4">
+
+    <!-- Search box (floating on map) -->
+    <div class="map-search-box">
+        <input type="text" id="mapSearchInput" class="form-control"
+               placeholder="Search location (e.g. The Glam Room)">
+        <button type="button" class="btn btn-dark mt-2 w-100"
+                onclick="searchLocation()">
+            Search
+        </button>
+    </div>
+
+    <!-- Google Map -->
+    <iframe
+        id="mapFrame"
+        src="https://www.google.com/maps?q=The+Glam+Room+Kathmandu&output=embed"
+        allowfullscreen
+        loading="lazy">
+    </iframe>
+
+    <!-- Floating Contact Form -->
+    <div class="contact-form-box">
+        <h2 class="text-center mb-3">Contact Us</h2>
+
+        <form method="POST" action="{% url 'contact' %}">
+        {% csrf_token %}
+        
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name"
+                       placeholder="Enter your name" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email"
+                       placeholder="Enter your email" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" rows="4" id="message" name="message"
+                          placeholder="Write your message" required></textarea>
+            </div>
+
+            <button class="btn btn-primary w-100">Send Message</button>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function searchLocation() {
+    const location = document.getElementById("mapSearchInput").value;
+
+    if (location.trim() === "") {
+        alert("Please enter a location");
+        return;
+    }
+
+    const mapUrl =
+        "https://www.google.com/maps?q=" +
+        encodeURIComponent(location) +
+        "&output=embed";
+
+    document.getElementById("mapFrame").src = mapUrl;
+}
+</script>
+{% endblock %}

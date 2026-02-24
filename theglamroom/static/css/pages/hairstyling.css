@@ -1,0 +1,107 @@
+/* ==============================
+   Hero Section
+============================== */
+.hero-container {
+    position: relative;
+    width: 100vw; /* full width of the viewport */
+    height: 70vh;  /* adjust hero height */
+    overflow: hidden;
+}
+
+.hero-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures the image covers the container */
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    padding: 0 1rem;
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* ==============================
+   Page Content
+============================== */
+h2.text-center {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+p.text-muted {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* ==============================
+   Service List
+============================== */
+.service-list li {
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+}
+
+.service-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-list li strong {
+    font-size: 1.1rem;
+}
+
+.service-list li small {
+    color: #6c757d;
+}
+
+/* ==============================
+   Book Button
+============================== */
+.btn-primary {
+    background-color: #ff69b4;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #ff85c1;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 768px) {
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .service-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .service-list li span.fw-bold {
+        margin-top: 0.5rem;
+    }
+}

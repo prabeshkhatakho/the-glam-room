@@ -1,0 +1,160 @@
+/* ==============================
+   Hero Section
+============================== */
+.hero-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-container img.hero-img {
+    width: 100%;
+    height: auto;            /* keep original ratio */
+    object-fit: contain;     /* no cropping */
+    display: block;
+    background-color: #000;  /* fills empty space if image is short */
+}
+
+/* Overlay text */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.hero-overlay p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* =========================
+   Map Section (Boxed)
+========================= */
+.map-section {
+    position: relative;
+    max-width: 1200px;
+    height: 550px;
+    margin: 80px auto;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+    margin-bottom: 25px;
+}
+
+/* Google Map */
+.map-section iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ==============================
+   Floating Search Box
+============================== */
+.map-search-box {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.map-search-box input {
+    border-radius: 8px;
+}
+
+/* ==============================
+   Floating Contact Form
+============================== */
+.contact-form-box {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    width: 350px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    z-index: 30;
+}
+
+/* Form styles */
+.contact-form-box h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.contact-form-box .form-control {
+    border-radius: 8px;
+}
+
+.contact-form-box .btn-primary {
+    background-color: #ff69b4;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.contact-form-box .btn-primary:hover {
+    background-color: #ff85c1;
+    color: #fff;
+}
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 992px) {
+    .contact-form-box {
+        width: 300px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .map-section {
+        height: auto;
+    }
+
+    .map-section iframe {
+        height: 350px;
+    }
+
+    .map-search-box {
+        width: 85%;
+    }
+
+    .contact-form-box {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 20px;
+        box-shadow: none;
+    }
+}

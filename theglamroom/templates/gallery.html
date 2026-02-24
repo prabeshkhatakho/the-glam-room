@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gallery | The Glam Room{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages/gallery.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Image with Overlay -->
+<div class="hero-container">
+    <img src="{% static 'img/gallery.jpg' %}" class="img-fluid hero-img" alt="Hero Image">
+    <div class="hero-overlay">
+        <h1>The Glam Room Gallery</h1>
+    </div>
+</div>
+
+<!-- Gallery Section -->
+<div class="container mt-5 py-5">
+    {% if query %}
+        <h2 class="text-center mb-4">Search Results for "{{ query }}"</h2>
+    {% else %}
+        <h2 class="text-center mb-4">Our Gallery</h2>
+    {% endif %}
+
+    <div class="row g-4">
+        {% for img in images %}
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="gallery-card">
+                <img src="{{ img.image.url }}" alt="{{ img.title }}" class="img-fluid gallery-img">
+                <!-- Optional overlay on each gallery image -->
+                <div class="gallery-overlay">
+                    <p>{{ img.title }}</p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">No images found.</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

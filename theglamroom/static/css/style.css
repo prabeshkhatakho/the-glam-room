@@ -1,0 +1,304 @@
+/* =========================
+   Base Styles & Layout
+========================= */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* =========================
+   Navbar
+========================= */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: #ff69b4 !important;
+}
+
+.navbar-brand {
+    margin-right: 0;
+}
+
+.navbar-brand img {
+    height: 120px;
+    width: auto;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 50px;
+}
+
+.navbar-nav .nav-item:first-child {
+    margin-left: 0;
+}
+
+.navbar .nav-link {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-link:not(.dropdown-toggle)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: 5px;
+    background-color: #ff69b4;
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link:not(.dropdown-toggle):hover::after {
+    width: 100%;
+}
+
+.navbar .dropdown-menu .dropdown-item:hover {
+    background-color: #ffe6f0;
+    color: #ff69b4;
+}
+
+/* Navbar buttons & form */
+.navbar .form-control {
+    padding: 0 10px;
+}
+
+.navbar .navbar-search {
+    flex: 1;
+    max-width: 700px;
+    margin: 0 20px;
+}
+
+.navbar .btn-primary,
+.navbar .btn-outline-success {
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-btn {
+    background-color: #ff69b4;
+    border: none;
+    padding: 10px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.login-btn:hover {
+    background-color: #ff85c1;
+}
+
+/* Hamburger icon */
+.navbar-toggler {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Search icon inside input */
+.input-group-text i {
+    color: #888888;
+    font-size: 16px;
+}
+
+/* =========================
+   Cards & Gallery
+========================= */
+.card,
+.gallery-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover,
+.gallery-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top,
+.gallery-card img {
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card-img-top {
+    height: 240px;
+}
+
+.card:hover .card-img-top,
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.2rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 12px;
+}
+
+.card-body .d-flex {
+    padding-top: 8px;
+    border-top: 1px solid #eee;
+}
+
+.card-body span.h5 {
+    color: #198754;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.card-footer .btn-primary {
+    border-radius: 20px;
+    padding: 5px 16px;
+    font-size: 0.85rem;
+}
+
+.card-footer .btn-outline-secondary {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+}
+
+.card-footer .btn-outline-secondary:hover {
+    background-color: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+}
+
+/* =========================
+   Footer
+========================= */
+.footer {
+    background-color: #ff69b4 !important;
+    color: white;
+}
+
+.footer a {
+    color: white !important;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #ffe6f0 !important;
+}
+
+/* =========================
+   Popular Heading
+========================= */
+.popular-heading {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #2c2c2c;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px;
+}
+
+.popular-heading::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff4d6d, #845ec2);
+    border-radius: 3px;
+}
+
+.popular-heading::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 10px;
+    background: rgba(255, 77, 109, 0.25);
+    filter: blur(12px);
+    border-radius: 50%;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+    .hero-logo { top: 80px; height: 100px; }
+    .hero-text { top: 160px; width: 70%; }
+    .hero-text h1 { font-size: 2rem; }
+    .hero-text p { font-size: 1rem; }
+    .text-block { font-size: 0.95rem; padding: 20px; }
+    .contact-form-box { position: static; transform: none; width: 100%; border-radius: 0; }
+    .map-section { height: auto; }
+    .map-section iframe { height: 300px; }
+    .navbar { flex-wrap: wrap; height: auto; padding: 5px 10px; }
+    .navbar-brand img { height: 75px; }
+    .navbar .nav-link { line-height: 35px; font-size: 0.9rem; }
+    .navbar .form-control,
+    .navbar .btn-primary,
+    .navbar .btn-outline-success { height: 30px; margin: 5px 0; }
+    .navbar .navbar-search { max-width: 100%; margin: 5px 0; }
+    .hero-img { height: 80vh; min-height: 420px; }
+    .center-text h2 { font-size: 1.6rem; }
+    .hero-paragraph p { font-size: 0.9rem; line-height: 1.5; text-align: center; width: 100%; }
+    .hero-section .btn-primary { width: 100%; max-width: 260px; padding: 12px; font-size: 0.95rem; }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .navbar { height: 65px; }
+    .navbar-brand img { height: 75px; }
+    .navbar .nav-link { line-height: 55px; }
+    .navbar .form-control,
+    .navbar .btn-primary,
+    .navbar .btn-outline-success { height: 32px; }
+    .navbar .navbar-search { max-width: 400px; margin: 0 10px; }
+}
+
+@media (min-width: 992px) {
+    .navbar { height: 90px; }
+    .navbar-brand img { height: 120px; }
+    .navbar .nav-link { line-height: 70px; }
+    .navbar .form-control,
+    .navbar .btn-primary,
+    .navbar .btn-outline-success { height: 35px; }
+    .navbar .navbar-search { position: absolute; left: 60%; transform: translateX(-50%); width: 600px; margin: 0; }
+}

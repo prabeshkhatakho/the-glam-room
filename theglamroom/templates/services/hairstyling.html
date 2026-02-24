@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages/hairstyling.css' %}">
+{% endblock %}
+
+{% block title %}Hair Styling | The Glam Room{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<div class="hero-container">
+    <img src="{% static 'img/hairstylebanner1.jpg' %}" alt="Hair Styling Services">
+    <div class="hero-overlay">
+        <h1>Hair Styling Services</h1>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div class="container mt-5">
+
+    <!-- Category Title -->
+    <h2 class="text-center mb-4">Hair Styling Prices</h2>
+
+    <!-- Category Description -->
+    <p class="text-center text-muted mb-5">
+        Our hair styling services include modern cuts, blowouts, and creative hair transformations.
+    </p>
+
+    
+
+</div>
+
+{% endblock %}
