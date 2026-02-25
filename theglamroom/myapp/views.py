@@ -82,11 +82,13 @@ def gallery_search(request):
 # =========================
 def hairstyle(request):
     hairstyles = Hairstyle.objects.filter(is_active=True)
-    return render(request, 'hairstyle.html', {'hairstyles': hairstyles})
+    return render(request, 'services/hairstyling.html', {
+        'hairstyles': hairstyles
+    })
 
 def makeup(request):
     makeups = Makeup.objects.filter(is_active=True)
-    return render(request, 'makeup.html', {'makeups': makeups})
+    return render(request, 'services/makeups.html', {'makeups': makeups})
 
 
 # =========================

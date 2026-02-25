@@ -19,22 +19,22 @@
 
 <!-- Glam Room Special Hair Text -->
 <div class="special-hair-banner text-center mt-4">
-    <h2>The Glam Room Special Hair</h2>
+    <h2>The Glam Room Special Maekup</h2>
 </div>
 
 <div class="container my-5">
     <!-- Example: Card grid for hairstyles -->
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-4">
-        {% for hair in hairstyles %}
+        {% for makeup in makeups %}
         <div class="col d-flex justify-content-center">
             <div class="hair-rect-card">
                 <div class="hair-img-wrapper">
-                    <img src="{{ hair.image.url }}" alt="{{ hair.title }}">
+                    <img src="{{ makeup.image.url }}" alt="{{ makeup.title }}">
                 </div>
 
                 <div class="hair-card-content text-center">
-                    <h5>{{ hair.title }}</h5>
-                    <p>{{ hair.description }}</p>
+                    <h5>{{ makeup.title }}</h5>
+                    <p>{{ makeup.description }}</p>
 
                     <a href="{% url 'book_appointment' %}" class="btn book-btn">
                         Book Now
